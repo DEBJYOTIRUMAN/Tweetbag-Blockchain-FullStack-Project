@@ -1,0 +1,24 @@
+{
+  "name": "tweetbag-backend",
+  "version": "1.0.0",
+  "description": "Tweetbag Blockchain Web 3.0 Social Media App Backend in NodeJS - Express Framework & MongoDB Database",
+  "main": "index.js",
+  "author": "Debjyoti Das",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon -r esm server.js",
+    "start": "node -r esm server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "esm": "^3.2.25",
+    "express": "^4.17.3",
+    "joi": "^17.6.0",
+    "mongoose": "^5.12.1",
+    "multer": "^1.4.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

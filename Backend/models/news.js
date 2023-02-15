@@ -1,0 +1,24 @@
+import mongoose from "mongoose";
+const Schema = mongoose.Schema;
+import { APP_URL } from "../config";
+
+const newsSchema = new Schema(
+  {
+    userName: { type: String, required: true },
+    walletAddress: { type: String, required: true },
+    profileImage: { type: String, required: true },
+    isProfileImageNft: { type: Boolean, required: true },
+    caption: { type: String, required: true },
+    imageUrl: {
+      type: String,
+      required: true,
+      get: (image) => {
+        return `${APP_URL}/${image.replace("\\", "/")}`;
+      },
+    },
+    likes: { type: Array, required: true },
+  },
+  { timestamps: true, toJSON: { getters: true } }
+);
+
+export default mongoose.model("News", newsSchema, "news");
